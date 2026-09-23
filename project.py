@@ -1,4 +1,3 @@
-# ===== TEMPLE RUN 2: ESCAPE THE DEMON MONKEY =====
 
 print("You're sprinting through the jungle temple, the ground crumbling behind you.")
 print("A giant demon monkey is chasing you, and the path ahead splits into three directions.")
@@ -10,7 +9,7 @@ print("DASH - Run straight through the middle, dodging obstacles")
 
 choice1 = input("Enter your choice: ").upper()
 
-# LEVEL 1: JUMP PATH
+# JUMP PATH
 if choice1 == "JUMP":
     print()
     print("You leap across the gap and land on a shaky rope bridge!")
@@ -32,7 +31,7 @@ if choice1 == "JUMP":
         print()
         print("You freeze on the bridge, unsure what to do, and it collapses under you. GAME OVER.")
 
-# LEVEL 1: SLIDE PATH
+# SLIDE PATH
 elif choice1 == "SLIDE":
     print()
     print("You slide under the log and land in a torch-lit tunnel.")
@@ -54,7 +53,7 @@ elif choice1 == "SLIDE":
         print()
         print("You stand still, confused, and the tunnel collapses around you. GAME OVER.")
 
-#LEVEL 1: DASH PATH
+#DASH PATH
 elif choice1 == "DASH":
     print()
     print("You dash through the middle, dodging swinging blades and spike traps.")
@@ -74,7 +73,6 @@ elif choice1 == "DASH":
         print()
         print("You hesitate too long, and the door slams shut, trapping you inside. GAME OVER.")
 
-# ---------- INVALID INPUT FOR LEVEL 1 ----------
-else:
+#INVALID INPUTelse:
     print()
     print("You freeze, unsure which way to go, and the monkey catches up to you. GAME OVER.")
