@@ -1,78 +1,154 @@
+# Mysterious Forest Adventure
+# A simple text-based choose-your-own-adventure game
 
-print("You're sprinting through the jungle temple, the ground crumbling behind you.")
-print("A giant demon monkey is chasing you, and the path ahead splits into three directions.")
+print("=====================================")
+print("   WELCOME TO THE MYSTERIOUS FOREST")
+print("=====================================")
 print()
-print("What do you do?")
-print("JUMP - Jump over the gap to the left path")
-print("SLIDE - Slide under the fallen log on the right path")
-print("DASH - Run straight through the middle, dodging obstacles")
 
-choice1 = input("Enter your choice: ").upper()
 
-# JUMP PATH
-if choice1 == "JUMP":
+def get_choice(valid_choices):
+    """
+    Keeps asking the player for input until they type
+    something that matches one of the valid choices.
+    Works no matter if they type UPPER, lower, or MiXeD case.
+    """
+    while True:
+        answer = input("> ").upper()  # turn whatever they typed into CAPS
+        if answer in valid_choices:
+            return answer
+        else:
+            print("Hmm, that's not one of the options. Try again!")
+            print("(Choices: " + ", ".join(valid_choices) + ")")
+
+
+# ---------------------------------------------------------
+# LEVEL 1 - The starting scenario (THREE choices here)
+# ---------------------------------------------------------
+def level_1():
+    print("You wake up lost in a dark, misty forest.")
+    print("Ahead of you, the path splits three ways.")
     print()
-    print("You leap across the gap and land on a shaky rope bridge!")
-    print("The bridge is swaying, and you see two options ahead.")
-    print("GRAB - Grab the vine hanging above you")
-    print("RUN - Keep running across the bridge")
-
-    choice2 = input("Enter your choice: ").upper()
-
-    if choice2 == "GRAB":
-        print()
-        print("You swing off the bridge just as it collapses, landing safely on solid ground!")
-        print("You escaped with a pouch of golden coins. YOU WIN!")
-    elif choice2 == "RUN":
-        print()
-        print("You keep sprinting, but the bridge snaps beneath your feet!")
-        print("You fall into the river below and wash up far from the temple. GAME OVER.")
-    else:
-        print()
-        print("You freeze on the bridge, unsure what to do, and it collapses under you. GAME OVER.")
-
-# SLIDE PATH
-elif choice1 == "SLIDE":
+    print("GO LEFT")
+    print("GO RIGHT")
+    print("CLIMB TREE")
     print()
-    print("You slide under the log and land in a torch-lit tunnel.")
-    print("You hear rushing water ahead and see a fork in the tunnel.")
-    print("LEFT - Head toward the sound of water")
-    print("RIGHT - Head toward a faint light")
 
-    choice2 = input("Enter your choice: ").upper()
+    choice = get_choice(["GO LEFT", "GO RIGHT", "CLIMB TREE"])
 
-    if choice2 == "LEFT":
-        print()
-        print("You find an underground river and ride the current out of the temple!")
-        print("You escape with a rare gem. YOU WIN!")
-    elif choice2 == "RIGHT":
-        print()
-        print("You follow the light and end up trapped in a dead-end room.")
-        print("The demon monkey catches up to you. GAME OVER.")
-    else:
-        print()
-        print("You stand still, confused, and the tunnel collapses around you. GAME OVER.")
+    if choice == "GO LEFT":
+        level_2_river()
+    elif choice == "GO RIGHT":
+        level_2_cave()
+    elif choice == "CLIMB TREE":
+        level_2_village()
 
-#DASH PATH
-elif choice1 == "DASH":
+
+# ---------------------------------------------------------
+# LEVEL 2 - Three different branches, each with its own choices
+# ---------------------------------------------------------
+def level_2_river():
     print()
-    print("You dash through the middle, dodging swinging blades and spike traps.")
-    print("You reach a giant stone door with strange symbols and see two levers.")
-    print("PULL - Pull the left lever")
-    print("PUSH - Push the right lever")
-
-    choice2 = input("Enter your choice: ").upper()
-
-    if choice2 == "PULL":
-        print()
-        print("The door creaks open, revealing a hidden staircase to the exit. YOU WIN!")
-    elif choice2 == "PUSH":
-        print()
-        print("Spikes shoot out from the walls! You narrowly dodge them, but the monkey grabs you. GAME OVER.")
-    else:
-        print()
-        print("You hesitate too long, and the door slams shut, trapping you inside. GAME OVER.")
-
-#INVALID INPUTelse:
+    print("You walk left and find a wide, rushing river.")
+    print("A rope bridge sways dangerously above it.")
     print()
-    print("You freeze, unsure which way to go, and the monkey catches up to you. GAME OVER.")
+    print("SWIM ACROSS")
+    print("USE BRIDGE")
+    print()
+
+    choice = get_choice(["SWIM ACROSS", "USE BRIDGE"])
+
+    if choice == "SWIM ACROSS":
+        level_3_river_ending()
+    elif choice == "USE BRIDGE":
+        level_3_bridge_ending()
+
+
+def level_2_cave():
+    print()
+    print("You walk right and discover the mouth of a dark cave.")
+    print("A cold wind blows out from inside.")
+    print()
+    print("ENTER CAVE")
+    print("WALK AWAY")
+    print()
+
+    choice = get_choice(["ENTER CAVE", "WALK AWAY"])
+
+    if choice == "ENTER CAVE":
+        level_3_cave_ending()
+    elif choice == "WALK AWAY":
+        level_3_walkaway_ending()
+
+
+def level_2_village():
+    print()
+    print("You climb the tree and spot a tiny hidden village nearby!")
+    print("Smoke rises from a chimney. Someone might be home.")
+    print()
+    print("KNOCK ON DOOR")
+    print("SNEAK AROUND")
+    print()
+
+    choice = get_choice(["KNOCK ON DOOR", "SNEAK AROUND"])
+
+    if choice == "KNOCK ON DOOR":
+        level_3_villager_ending()
+    elif choice == "SNEAK AROUND":
+        level_3_sneak_ending()
+
+
+# ---------------------------------------------------------
+# LEVEL 3 - The endings. Every path leads somewhere different!
+# ---------------------------------------------------------
+def level_3_river_ending():
+    print()
+    print("The current is too strong! You are swept downstream")
+    print("and wash up on a sunny, unfamiliar shore. Adventure awaits!")
+    print("*** ENDING: THE DRIFTER ***")
+
+
+def level_3_bridge_ending():
+    print()
+    print("The bridge creaks but holds! You cross safely and")
+    print("find an old treasure chest hidden in the reeds.")
+    print("*** ENDING: THE TREASURE FINDER ***")
+
+
+def level_3_cave_ending():
+    print()
+    print("Deep in the cave, glowing crystals light your way.")
+    print("You've discovered a secret underground kingdom!")
+    print("*** ENDING: THE EXPLORER ***")
+
+
+def level_3_walkaway_ending():
+    print()
+    print("You decide caves are creepy and head back to the forest,")
+    print("where you build a cozy little camp and rest for the night.")
+    print("*** ENDING: THE SURVIVOR ***")
+
+
+def level_3_villager_ending():
+    print()
+    print("A kind old woman answers the door, feeds you a warm meal,")
+    print("and tells you the safe way out of the forest.")
+    print("*** ENDING: THE GUEST ***")
+
+
+def level_3_sneak_ending():
+    print()
+    print("You sneak past unseen, but a dog starts barking loudly!")
+    print("You run off into the trees, heart pounding with excitement.")
+    print("*** ENDING: THE SNEAK ***")
+
+
+# ---------------------------------------------------------
+# Start the game!
+# ---------------------------------------------------------
+level_1()
+
+print()
+print("=====================================")
+print("            THANKS FOR PLAYING")
+print("=====================================")
