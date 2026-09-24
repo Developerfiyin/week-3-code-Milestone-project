@@ -13,14 +13,10 @@ oops_reactions = [
     "Your own echo repeats your mistake back at you."
 ]
 
-print("=====================================")
 print("   WELCOME TO THE MYSTERIOUS FOREST")
-print("=====================================")
 
-# ---------------------------------------
-# LEVEL 1 - the start of the story
 # This part has THREE choices instead of two
-# ---------------------------------------
+
 
 print("You wake up lost in a dark, misty forest.")
 print("Your head is spinning, and you don't remember how you got here.")
@@ -54,14 +50,14 @@ if choice1 == "GO LEFT":
         print("The current is too strong! You are swept downstream")
         print("and wash up, gasping, on a sunny, unfamiliar shore.")
         print("A parrot squawks overhead, as if welcoming you home.")
-        print("*** ENDING: THE DRIFTER ***  \U0001F30A")
+        print("*** ENDING: THE DRIFTER ***")
     elif choice2 == "USE BRIDGE":
         print()
         print("Trying not to look down, you creep across plank by plank.")
         print("The bridge creaks but holds! Safely on the other side,")
         print("you spot an old treasure chest hidden in the reeds.")
         print("Inside: a rusty key and a map with a big red X.")
-        print("*** ENDING: THE TREASURE FINDER ***  \U0001F5DD\uFE0F")
+        print("*** ENDING: THE TREASURE FINDER ***")
     else:
         print()
         print("You stand frozen at the riverbank, unsure what to do.")
@@ -89,13 +85,13 @@ elif choice1 == "GO RIGHT":
         print("Deep in the cave, glowing crystals light your way,")
         print("revealing a secret underground kingdom of tiny miners!")
         print("They cheer and crown you their honorary guest.")
-        print("*** ENDING: THE EXPLORER ***  \U0001F48E")
+        print("*** ENDING: THE EXPLORER ***")
     elif choice2 == "WALK AWAY":
         print()
         print("You decide caves are far too creepy for your taste.")
         print("You head back to the forest and build a cozy little")
         print("campfire, roasting mystery berries under the stars.")
-        print("*** ENDING: THE SURVIVOR ***  \U0001F525")
+        print("*** ENDING: THE SURVIVOR ***")
     else:
         print()
         print("You hesitate at the cave entrance, frozen with doubt.")
@@ -122,13 +118,13 @@ elif choice1 == "CLIMB TREE":
         print("Knock knock! A kind old woman answers, smiling warmly.")
         print("She feeds you a warm bowl of mushroom stew and points")
         print("you toward the safe path out of the forest.")
-        print("*** ENDING: THE GUEST ***  \U0001F372")
+        print("*** ENDING: THE GUEST ***")
     elif choice2 == "SNEAK AROUND":
         print()
         print("You tiptoe around the cottage, quiet as a mouse.")
         print("Suddenly a dog starts barking like crazy!")
         print("You bolt into the trees, heart pounding with excitement.")
-        print("*** ENDING: THE SNEAK ***  \U0001F43E")
+        print("*** ENDING: THE SNEAK **")
     else:
         print()
         print("You freeze on the village path, unsure what to do next.")
