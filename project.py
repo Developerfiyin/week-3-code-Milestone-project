@@ -124,7 +124,7 @@ elif choice1 == "CLIMB TREE":
         print("You tiptoe around the cottage, quiet as a mouse.")
         print("Suddenly a dog starts barking like crazy!")
         print("You bolt into the trees, heart pounding with excitement.")
-        print("*** ENDING: THE SNEAK **")
+        print("*** ENDING: THE SNEAK**")
     else:
         print()
         print("You freeze on the village path, unsure what to do next.")
