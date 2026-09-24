@@ -143,6 +143,5 @@ else:
     print("(Hint: type GO LEFT, GO RIGHT, or CLIMB TREE next time!)")
 
 print()
-print("=====================================")
-print("            THANKS FOR PLAYING")
-print("=====================================")
+
+print("THANKS FOR PLAYING")
