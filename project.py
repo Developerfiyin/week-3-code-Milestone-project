@@ -16,16 +16,6 @@ oops_reactions = [
 print("=====================================")
 print("   WELCOME TO THE MYSTERIOUS FOREST")
 print("=====================================")
-print()
-print("      /\\  /\\      /\\  /\\")
-print("     /  \\/  \\    /  \\/  \\")
-print("    /        \\  /        \\")
-print("   /__________\\/__________\\")
-print("            ||")
-print("            ||")
-print()
-print("A gust of wind rustles the leaves as your adventure begins...")
-print()
 
 # ---------------------------------------
 # LEVEL 1 - the start of the story
@@ -42,7 +32,7 @@ print("CLIMB TREE")
 print()
 
 choice1 = input("> ")
-choice1 = choice1.upper()  # makes lower/mixed case count too
+choice1 = choice1.upper()  
 
 if choice1 == "GO LEFT":
     print()
