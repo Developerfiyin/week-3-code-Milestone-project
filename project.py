@@ -112,7 +112,7 @@ elif choice1 == "CLIMB TREE":
     choice2 = input("> ")
     choice2 = choice2.upper()
 
-    # LEVEL 3 - the ending
+    # LEVEL 3         - the ending
     if choice2 == "KNOCK ON DOOR":
         print()
         print("Knock knock! A kind old woman answers, smiling warmly.")
