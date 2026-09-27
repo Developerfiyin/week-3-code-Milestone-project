@@ -27,7 +27,7 @@ print("GO RIGHT")
 print("CLIMB TREE")
 print()
 
-choice1 = input("> ")
+choice1 = input(" > ")
 choice1 = choice1.upper()  
 
 if choice1 == "GO LEFT":
